@@ -63,16 +63,16 @@ public:
 	class iterator {
 	private:
 		friend class TierList;
-		List **itiers;
-
-		size_t curr_tier;
+		const TierList *itiers;
 
 		List::iterator curr_item;
+
+		size_t curr_tier;
 
 		const size_t &n;
 
 		// this is possible with the power of friendship
-		iterator(const size_t &n, List::iterator curr_item, List **p = nullptr, size_t curr_tier = -1);
+		iterator(const size_t &n, List::iterator curr_item, const TierList *itiers, size_t curr_tier = -1);
 
 	public:
 		// Returns a value_type instance, holding on to

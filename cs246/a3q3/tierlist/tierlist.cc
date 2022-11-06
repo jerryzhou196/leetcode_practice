@@ -89,13 +89,13 @@ TierList::iterator TierList::end() const {
 	return i;
 }
 
-TierList::iterator TierList::begin() const {     // the const keyword sets the this to be const *this
-	iterator i(n, tiers[0]->begin(), tiers, 0);  // possible because of friendship
+TierList::iterator TierList::begin() const {    // the const keyword sets the this to be const *this
+	iterator i(n, tiers[0]->begin(), this, 0);  // possible because of friendship
 	return i;
 }
 
 //  --------------------------------------------------------------------------------
-TierList::iterator::iterator(const size_t &n, List::iterator curr_item, List **p, size_t curr_tier)
+TierList::iterator::iterator(const size_t &n, List::iterator curr_item, const TierList *p, size_t curr_tier)
     : n{n}, curr_item{curr_item}, itiers{p}, curr_tier{curr_tier} {}
 
 TierList::value_type TierList::iterator::operator*() const {
@@ -111,11 +111,11 @@ TierList::value_type TierList::iterator::operator*() const {
 TierList::iterator &TierList::iterator::operator++() {
 	++curr_item;  // outsource
 
-	if (curr_item == itiers[curr_tier]->end() && curr_tier < n) {
-		while (curr_tier < n && !itiers[curr_tier]) ++curr_tier;  // take us to the nearest valid tier or n if there are none
+	if (curr_item == (itiers->tiers)[curr_tier]->end() && curr_tier < n) {
+		while (curr_tier < n && !(itiers->tiers)[curr_tier]) ++curr_tier;  // take us to the nearest valid tier or n if there are none
 
 		if (!(curr_tier < n)) {
-			curr_item = itiers[curr_tier]->begin();
+			curr_item = (itiers->tiers)[curr_tier]->begin();
 		}
 	}
 
@@ -126,10 +126,10 @@ TierList::iterator TierList::iterator::operator<<(int bk) const {
 	size_t sum = (int)curr_tier - bk;
 
 	if (sum >= 0 && sum < curr_tier) {
-		iterator i{n, itiers[sum]->begin(), itiers, sum};
+		iterator i{n, (itiers->tiers)[sum]->begin(), itiers, sum};
 		return i;
 	} else {
-		iterator i{n, itiers[sum]->end()};
+		iterator i{n, (itiers->tiers)[sum]->end(), itiers};
 		return i;
 	}
 }
