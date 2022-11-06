@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 // m = number of rows
@@ -36,10 +37,10 @@ public:
 
 int main(){
     Solution s;
-    vector<vector<char> > vec{ {'1','1','1','1','0'}, 
-                         { '1','1','0','1','0'}, 
-                         {'1','1','0','0','0'},
-                         {'0','0','0','0','1'} }; 
+    vector<vector<char> > vec{{'1','1','1','1','0'}, 
+                               {'1','1','0','1','0'}, 
+                               {'1','1','0','0','0'},
+                               {'0','0','1','0','1'} }; 
     printf("number of islands: %d", s.numIslands(vec));
     return 0;
 }
