@@ -1,0 +1,22 @@
+render
+filledbox 0 0 0 0 a
+filledbox 0 0 1 1 b
+filledbox 0 0 2 2 c
+filledbox 0 0 3 3 d
+filledbox 1 1 6 6 p
+filledbox 9 9 1 1 G
+render   
+movingbox 11 11 0 0 s l 
+movingbox 11 11 1 1 t l 
+movingbox 11 11 2 2 l l 
+movingbox 11 11 6 6 y l
+render
+blinkingbox 5 5 1 1 t
+render
+blinkingbox 5 5 2 2 u
+render
+blinkingbox 5 5 3 3 v
+render
+blinkingbox 5 5 4 4 w
+render
+animate 5

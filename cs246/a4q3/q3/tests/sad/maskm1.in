@@ -1,0 +1,23 @@
+filledbox 8 8 1 1 6
+filledbox 8 8 2 2 6
+filledbox 8 8 3 3 6
+filledbox 8 8 4 4 6
+filledbox 8 8 5 5 6
+filledbox 8 8 6 6 6
+filledbox 8 8 7 7 6
+filledbox 8 8 0 0 6
+filledbox 8 8 1 1 6
+filledbox 9 9 2 2 6
+filledbox 9 9 3 3 6
+filledbox 9 9 3 3 
+animate 5
+maskbox 8 8 2 2 u
+maskbox 8 8 3 3 v
+maskbox 8 8 4 4 w
+maskbox 9 9 3 3 e
+maskbox 9 9 4 4 d
+maskbox 9 9 5 5 e
+maskbox 9 9 6 6 f
+maskbox 9 9 7 7 g
+maskbox 9 9 8 8 h
+maskbox 9 9 9 9 i

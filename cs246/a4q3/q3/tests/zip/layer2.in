@@ -1,0 +1,18 @@
+
+filledbox 8 8 8 8 B
+render
+filledbox 9 9 1 1 G
+render   
+movingbox 11 11 0 0 s l 
+movingbox 11 11 1 1 t l 
+
+render
+blinkingbox 4 4 8 8 r
+render
+render
+blinkingbox 4 4 9 9 s
+render
+render
+blinkingbox 4 4 0 0 s
+
+animate 5

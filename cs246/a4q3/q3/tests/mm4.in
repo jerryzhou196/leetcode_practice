@@ -1,0 +1,142 @@
+movingbox 0 0 0 0 a d
+movingbox 0 0 1 1 b d
+movingbox 0 0 2 2 c d
+movingbox 0 0 3 3 d d
+movingbox 0 0 3 3 e d
+movingbox 0 0 4 4 d d
+movingbox 0 0 5 5 e d
+movingbox 0 0 6 6 f d
+movingbox 0 0 7 7 g d
+movingbox 0 0 8 8 h d
+movingbox 0 0 9 9 i d
+movingbox 1 1 0 0 j d
+movingbox 1 1 1 1 k d
+movingbox 1 1 2 2 l d
+movingbox 1 1 3 3 m d
+movingbox 1 1 4 4 n d
+movingbox 1 1 5 5 o d
+movingbox 1 1 6 6 p d
+movingbox 1 1 7 7 q d
+movingbox 1 1 8 8 r d
+movingbox 1 1 9 9 s d
+movingbox 2 2 0 0 s d
+movingbox 2 2 1 1 t d
+movingbox 2 2 2 2 u d
+movingbox 2 2 3 3 v d
+movingbox 2 2 4 4 w d
+movingbox 2 2 5 5 x d
+movingbox 2 2 6 6 y d
+movingbox 2 2 7 7 z d
+movingbox 3 3 0 0 a d
+movingbox 3 3 1 1 b d
+movingbox 3 3 2 2 c d
+movingbox 3 3 3 3 d d
+movingbox 3 3 3 3 e d
+movingbox 3 3 4 4 d d
+movingbox 3 3 5 5 e d
+movingbox 3 3 6 6 f d
+movingbox 3 3 7 7 g d
+movingbox 3 3 8 8 h d
+movingbox 3 3 9 9 i d
+movingbox 4 4 0 0 j d
+movingbox 4 4 1 1 k d
+movingbox 4 4 2 2 l d
+movingbox 4 4 3 3 m d
+movingbox 4 4 4 4 n d
+movingbox 4 4 5 5 o d
+movingbox 4 4 6 6 p d
+movingbox 4 4 7 7 q d
+movingbox 4 4 8 8 r d
+movingbox 4 4 9 9 s d
+movingbox 4 4 0 0 s d
+movingbox 5 5 1 1 t d
+movingbox 5 5 2 2 u d
+movingbox 5 5 3 3 v d
+movingbox 5 5 4 4 w d
+movingbox 5 5 5 5 x d
+movingbox 5 5 6 6 y d
+movingbox 5 5 7 7 z d
+movingbox 5 5 8 8 z d
+movingbox 5 5 9 9 z d
+movingbox 6 6 0 0 a d
+movingbox 6 6 1 1 b d
+movingbox 6 6 2 2 c d
+movingbox 6 6 3 3 d d
+movingbox 6 6 3 3 e d
+movingbox 6 6 4 4 d d
+movingbox 6 6 5 5 e d
+movingbox 6 6 6 6 f d
+movingbox 6 6 7 7 g d
+movingbox 6 6 8 8 h d
+movingbox 6 6 9 9 i d
+movingbox 7 7 0 0 j d
+movingbox 7 7 1 1 k d
+movingbox 7 7 2 2 l d
+movingbox 7 7 3 3 m d
+movingbox 7 7 4 4 n d
+movingbox 7 7 5 5 o d
+movingbox 7 7 6 6 p d
+movingbox 7 7 7 7 q d
+movingbox 7 7 8 8 r d
+movingbox 7 7 9 9 s d
+movingbox 7 7 0 0 s d
+movingbox 8 8 1 1 t d
+movingbox 8 8 2 2 u d
+movingbox 8 8 3 3 v d
+movingbox 8 8 4 4 w d
+movingbox 8 8 5 5 x d
+movingbox 8 8 6 6 y d
+movingbox 8 8 7 7 z d
+movingbox 8 8 0 0 a d
+movingbox 8 8 1 1 b d
+movingbox 9 9 2 2 c d
+movingbox 9 9 3 3 d d
+movingbox 9 9 3 3 e d
+movingbox 9 9 4 4 d d
+movingbox 9 9 5 5 e d
+movingbox 9 9 6 6 f d
+movingbox 9 9 7 7 g d
+movingbox 9 9 8 8 h d
+movingbox 9 9 9 9 i d
+movingbox 10 10 0 0 j d
+movingbox 10 10 1 1 k d
+movingbox 10 10 2 2 l d
+movingbox 10 10 3 3 m d
+movingbox 10 10 4 4 n d
+movingbox 10 10 5 5 o d
+movingbox 10 10 6 6 p d
+movingbox 10 10 7 7 q d
+movingbox 10 10 8 8 r d
+movingbox 11 11 9 9 s d
+movingbox 11 11 0 0 s d
+movingbox 11 11 1 1 t d
+movingbox 11 11 2 2 u d
+movingbox 11 11 3 3 v d
+movingbox 11 11 4 4 w d
+movingbox 11 11 5 5 x d
+movingbox 11 11 6 6 y d
+movingbox 11 11 7 7 z d
+movingbox 3 3 9 9 B d
+movingbox 2 2 9 9 G d
+movingbox 2 2 8 8 H d
+movingbox 2 2 8 8 H d
+movingbox 5 5 0 0 G d
+movingbox 8 8 9 9 C d
+movingbox 8 8 9 9 C d
+movingbox 9 9 0 0 M d
+movingbox 8 8 8 8 B d
+movingbox 9 9 1 1 G d
+render
+render
+render
+render
+render
+render
+render
+render
+render
+render
+render
+render
+render
+render

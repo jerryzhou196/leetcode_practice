@@ -1,0 +1,9 @@
+1 2 + 3 x - * ABS NEG done
+eval
+set x 4
+print
+set x 3
+print
+eval
+unset x
+print

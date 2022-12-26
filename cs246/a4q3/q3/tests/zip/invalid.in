@@ -1,0 +1,8 @@
+render
+filledbox 0 1 0 1 b
+render
+clear
+filledbox 0 1 1 0 b
+render
+filledbox 0 1 0 1 b
+render
