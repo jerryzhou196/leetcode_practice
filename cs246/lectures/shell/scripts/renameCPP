@@ -1,6 +1,0 @@
-#!/bin/bash
-# Renames all .cpp files in the current directory to .cc
-
-for name in *.cpp; do
-  mv ${name} ${name%cpp}cc
-done
