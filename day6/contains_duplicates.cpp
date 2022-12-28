@@ -5,6 +5,7 @@ using namespace std;
 class Solution {
 public:
 	int romanToInt(string s) {
+		// NOTE: this problem is fundamentally flawed because it assumes s is a valid roman integer
 		unordered_map<char, int> vals{
 		    {'I', 1},
 		    {'V', 5},
@@ -14,10 +15,8 @@ public:
 		    {'D', 500},
 		    {'M', 1000},
 		};
-
 		int sum = 0;
 		int n   = s.size();
-
 		for (int x = 0; x < n; ++x) {
 			int prev = (x == 0) ? 0 : x - 1;
 			if (vals[s[prev]] < vals[s[x]]) {
