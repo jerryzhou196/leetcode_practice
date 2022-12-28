@@ -17,5 +17,22 @@ public:
 			}
 			++x;
 		}
+
+		int new_index = 0;
+		int k         = 0;
+
+		for (int old_index = 0; old_index < n; old_index++) {
+			if (nums[old_index] != -999) {
+				++new_index;
+				++k;
+			}
+
+			if (new_index != old_index && old_index != -999) {
+				nums[new_index + 1] = nums[old_index];
+				new_index           = old_index;
+				++k;
+			}
+		}
+		return k;
 	}
 };
