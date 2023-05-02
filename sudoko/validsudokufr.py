@@ -12,8 +12,6 @@ class Solution(object):
             if x != item and board[item][y] == val:
                 return False
         seen = {}
-        print((x // 3) * 3, (x // 3) * 3 + 3)
-        print((y // 3) * 3, (y // 3) * 3 + 3)
 
         for x in range((x // 3) * 3, (x // 3) * 3 + 3):
             for y in range((y // 3) * 3, (y // 3) * 3 + 3):
