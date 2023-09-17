@@ -60,3 +60,26 @@ INFO: Schema "PUBLIC" is up to date. No migration necessary.
 2023.07.04 21:16:25 INFO  Shutting down server
 2023.07.04 21:16:25 INFO  shutting down Metals
 2023.07.04 21:16:25 INFO  Exiting server
+2023.07.17 15:39:50 INFO  Started: Metals version 0.11.12 in workspace '/Users/jz/Desktop/leetcode_grind' for client Visual Studio Code 1.80.1.
+Jul. 17, 2023 3:39:50 P.M. org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.16.3 by Redgate
+Jul. 17, 2023 3:39:50 P.M. org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+Jul. 17, 2023 3:39:50 P.M. org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+Jul. 17, 2023 3:39:50 P.M. org.flywaydb.core.internal.database.base.BaseDatabaseType createDatabase
+INFO: Database: jdbc:h2:file:/Users/jz/Desktop/leetcode_grind/.metals/metals (H2 2.1)
+Jul. 17, 2023 3:39:50 P.M. org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.012s)
+Jul. 17, 2023 3:39:50 P.M. org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": 4
+Jul. 17, 2023 3:39:50 P.M. org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema "PUBLIC" is up to date. No migration necessary.
+2023.07.17 15:39:51 INFO  time: initialize in 0.41s
+2023.07.17 15:39:52 WARN  Build server is not auto-connectable.
+2023.07.17 15:39:52 WARN  no build tool detected in workspace '/Users/jz/Desktop/leetcode_grind'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+Jul. 17, 2023 4:46:31 P.M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2023.07.17 17:59:28 INFO  Shutting down server
+2023.07.17 17:59:28 INFO  shutting down Metals
+2023.07.17 17:59:28 INFO  Exiting server
