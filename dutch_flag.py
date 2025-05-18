@@ -1,3 +1,6 @@
+from typing import *
+
+
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
         low, mid = 0, 0
