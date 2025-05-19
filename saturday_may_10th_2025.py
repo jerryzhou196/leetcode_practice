@@ -1,4 +1,4 @@
-input_word = "nigga"
+input_word = "poop"
 n = len(input_word)
 
 
