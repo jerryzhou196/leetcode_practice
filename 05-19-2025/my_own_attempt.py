@@ -35,23 +35,29 @@ class Solution:
             for row2 in valid_configurations:
                 if any(row1[i] == row2[i] for i in range(m)):
                     continue
-                adjacent[tuple(row1)].append(row2)
+                hash = self.base3ToBase10(row1)
+                adjacent[hash].append(row2)
 
         prev_row = {}
         for row in valid_configurations:
-            prev_row[tuple(row)] = 1
+            prev_row[self.base3ToBase10(row)] = 1
 
-        for i, row in enumerate(valid_configurations):
+        for _ in range(n - 1):
             curr_row = defaultdict(int)
-            for next_row in adjacent[tuple(row)]:
-                curr_row[tuple(row)] += prev_row[tuple(next_row)]
+            for i, row in enumerate(valid_configurations):
+                hash = self.base3ToBase10(row)
+                for next_row in adjacent[hash]:
+                    curr_row[hash] += prev_row[self.base3ToBase10(next_row)]
 
             prev_row = curr_row
 
-        print(prev_row)
+        ans = 0
+        for key, val in prev_row.items(): 
+            ans += val
 
-        return sum(prev_row)
+        return ans 
+
 
 
 s = Solution()
-print(s.colorTheGrid(1, 2))
+print(s.colorTheGrid(1, 1))
