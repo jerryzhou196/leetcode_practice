@@ -13,6 +13,9 @@ class Solution:
     def colorTheGrid(self, m: int, n: int) -> int:
         valid_configurations = []
 
+        # [1, 1, 2, 2, 2, 2, 3, 5, 5, 9]
+        # 8
+
         # valid configurations
         for i in range(3**m):
             row = []
@@ -20,7 +23,6 @@ class Solution:
             for _ in range(m):
                 row.append(val % 3)
                 val //= 3
-            print(row)
 
             if any(row[i] == row[i + 1] for i in range(m - 1)):
                 continue
