@@ -24,5 +24,3 @@ print(s.isZeroArray([4,3,2,1], [[0,2]]))
 
 # max_subtract: [0, 0, 0]
 # ans: []
-
-
