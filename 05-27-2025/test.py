@@ -40,18 +40,3 @@ class Solution:
         
         return ans
 
-s = Solution()
-print(s.longestPalindrome(["qo","fo","fq","qf","fo","ff","qq","qf","of","of","oo","of","of","qf","qf","of"]))
-
-# print(sorted(["qo","fo","fq","qf","fo","ff","qq","qf","of","of","oo","of","of","qf","qf","of"]))
-# print(s.isPalindrome("eeracecaree"))
-
-# fo
-
-['ff', 'fo', 'fo', 'fq', 'of', 'of', 'of', 'of', 'of', 'oo', 'qf', 'qf', 'qf', 'qf', 'qo', 'qq']
-
-
-
-
-        
-        
