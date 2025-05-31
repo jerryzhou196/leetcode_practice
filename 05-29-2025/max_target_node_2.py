@@ -17,14 +17,15 @@ class Solution:
                 adj[y].append(x)
 
             even_sum = dfs(0, -1, True, adj)
-            odd_sum = dfs(1, -1, True, adj)
+            odd_sum = dfs(adj[0][0], -1, True, adj)
 
-            useEven = True 
-
-            for node in range(n):
-                ans[node] = even_sum if useEven else odd_sum
-                even_sum = not even_sum
-
+            def markSum(node, prev, isEven, adj):
+                ans[node] = odd_sum if not isEven else even_sum
+                for neighbour in adj[node]:
+                    if neighbour != prev: 
+                        markSum(neighbour, node, not isEven, adj)
+            markSum(0, -1, True, adj)
+            
             return ans
         
         adj1, adj2 = DefaultDict(list), DefaultDict(list)
@@ -32,3 +33,8 @@ class Solution:
         ans = build(edges1, adj1)
         largest = max(build(edges2, adj2))
         return [num + largest for num in ans]
+
+# Input: edges1 = [[0,1],[0,2],[2,3],[2,4]], edges2 = [[0,1],[0,2],[0,3],[2,7],[1,4],[4,5],[4,6]]
+  
+s = Solution()
+print(s.maxTargetNodes([[0,1],[0,2],[2,3],[2,4]], [[0,1],[0,2],[0,3],[2,7],[1,4],[4,5],[4,6]]))
