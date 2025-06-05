@@ -1,0 +1,22 @@
+{
+    "Version": "2025-06-04",
+    "Statement": [
+      {
+        "Sid": "LakeFormationDataAccessPolicy",
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "lakeformation.amazonaws.com"
+        },
+        "Action": [
+            "sts:AssumeRole",
+            "sts:SetContext",
+            "sts:SetSourceIdentity"
+        ],
+        "Condition": {
+          "StringEquals": {
+            "aws:SourceAccount":"arn:aws:iam::180045409750:role/IibsAdminAccess-DO-NOT-DELETE" 
+          }
+        }
+      }
+    ]
+}

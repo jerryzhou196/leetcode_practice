@@ -1,7 +1,7 @@
-"""Auto-generated on Wednesday, June 04, 2025."""
+class Solution:
+    def c2(n):
+        return (n) * (n - 1) // 2
 
-def main() -> None:
-    print("Hello from wednesday_june_4th_2025.py")
+    def distributeCandies(self, n: int, limit: int) -> int:
+        c2(n + 2)
 
-if __name__ == "__main__":
-    main()
