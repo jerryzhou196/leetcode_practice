@@ -1,5 +1,0 @@
-{
-    "ResourceArn": "arn:aws:s3tables:us-east-1:180045409750:bucket/jerr-zho-bucket-test-cli",
-    "WithFederation": true,
-    "RoleArn": "arn:aws:iam::180045409750:role/S3TablesRoleForLakeFormation"
-}
