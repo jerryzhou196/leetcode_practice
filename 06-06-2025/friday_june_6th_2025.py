@@ -9,17 +9,19 @@ class Solution:
         while didChange:
             didChange = False
             for i in range(n):
-                if ((i != n - 1 and 
-                    ratings[i] > ratings[i + 1]
-                    and count[i] <= count[i + 1]
-                    ) or 
-                    (i != 0 and 
-                    ratings[i] > ratings[i - 1]
-                    and count[i] <= count[i - 1]
-                    )):
+                if (
+                        (i != n - 1 and 
+                        ratings[i] > ratings[i + 1]
+                        and count[i] <= count[i + 1]
+                        ) 
+                    or 
+                        (i != 0 and 
+                        ratings[i] > ratings[i - 1]
+                        and count[i] <= count[i - 1]
+                        )
+                    ):
                     count[i] += 1
                     didChange = True
-            
 
         return sum(count)
         
