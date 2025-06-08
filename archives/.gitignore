@@ -3,3 +3,24 @@
 container_with_most_water.dSYM
 cs246
 a.out.dSYM
+
+# --- Python virtual environments ---
+venv/
+.venv/
+env/
+.env/
+ENV/
+.ENV/
+*/venv/
+*/.venv/
+*/env/
+*/.env/
+
+# --- Pip-installed packages that might slip outside a venv ---
+# (rare, but protects against accidental `pip install --target` or vendor-in folders)
+site-packages/
+*/site-packages/
+pip-wheel-metadata/
+*.egg-info/
+*.egg/
+.eggs/
