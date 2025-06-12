@@ -1,7 +1,23 @@
-"""Auto-generated on Wednesday, June 11, 2025."""
+class Solution:
+    def lastSubstring(self, word):
+        n = len(word)
+        i, j, k = 0, 1, 0
+        while j + k < n:
+            if word[i + k] < word[j + k]:
+                i, j = j, j + 1 
+                k = 0
+            elif word[i + k] > word[j + k]:
+                j += 1
+                k = 0
+            else:
+                k += 1
 
-def main() -> None:
-    print("Hello from wednesday_june_11th_2025.py")
+        return word[i:]
+    
+    def answerString(self, word: str, numFriends: int) -> str:
+        last = self.lastSubstring(word)
+        n, m = len(word), len(last)
+        return last[:min(n - numFriends + 1, m)]
 
-if __name__ == "__main__":
-    main()
+s = Solution()    
+print(s.answerString("asfesfez", 3))
