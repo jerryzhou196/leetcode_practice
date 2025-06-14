@@ -1,7 +1,32 @@
-"""Auto-generated on Friday, June 13, 2025."""
+import heapq
+from collections import Counter
 
-def main() -> None:
-    print("Hello from friday_june_13th_2025.py")
+class Solution:
+    def robotWithString(self, s: str) -> str:
+        stack = []
+        ans = []
+        minChar = 'a'
+        count = Counter(s)
+        for char in s:
+            stack.append(char)
+            count[char] -= 1
+            while minChar != 'z' and count[minChar] == 0:
+                minChar = chr(ord(minChar) + 1)
+            while stack and stack[-1] <= minChar:
+                ans.append(stack.pop())
+        
+        return "".join(ans)
 
-if __name__ == "__main__":
-    main()
+s = Solution()
+print(s.robotWithString("bzzzzzzzzzzzzzzzzza"))
+
+
+
+
+
+
+
+
+
+    
+        
