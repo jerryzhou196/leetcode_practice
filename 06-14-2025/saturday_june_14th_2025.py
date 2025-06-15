@@ -1,7 +1,16 @@
-"""Auto-generated on Saturday, June 14, 2025."""
+from heapq import *
+class Solution:
+    def clearStars(self, s: str) -> str:
+        smallest = []
+        input_string = list(s)
 
-def main() -> None:
-    print("Hello from saturday_june_14th_2025.py")
-
-if __name__ == "__main__":
-    main()
+        for i, char in enumerate(input_string):
+            if char == '*':
+                val, index = heappop(smallest)
+                input_string[-1 * index] = ''
+                input_string[i] = ''
+            else:
+                heappush(smallest, (char, -i))
+        
+        return "".join(input_string)
+    
