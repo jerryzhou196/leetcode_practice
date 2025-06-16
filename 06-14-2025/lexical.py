@@ -4,6 +4,8 @@ class Solution:
             createOrder(input_str: str, n) + i
 
     def lexicalOrder(self, n: int) -> List[int]:
+
+
         ans = []
 
 

@@ -1,7 +1,19 @@
-"""Auto-generated on Sunday, June 15, 2025."""
+from typing import *
 
-def main() -> None:
-    print("Hello from sunday_june_15th_2025.py")
+class Solution:
+    def lexicalOrder(self, n: int) -> List[int]:
+        ans = []
+        def dfs(curr, n):
+            if curr > n: return
+            if curr != 0.1:
+                ans.append(curr)
+            curr = int(curr * 10)
 
-if __name__ == "__main__":
-    main()
+            for i in range(10):
+                dfs(curr + i, n)
+        
+        dfs(0.1, n)
+        return ans
+    
+
+
