@@ -1,7 +1,38 @@
-"""Auto-generated on Tuesday, June 17, 2025."""
+from typing import *
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        n = len(height)
+        i, j = 0, 1
 
-def main() -> None:
-    print("Hello from tuesday_june_17th_2025.py")
+        total_area = 0
+        potential_area = 0
 
-if __name__ == "__main__":
-    main()
+        # left to right pass
+        while j < n:
+            if height[j] >= height[i]:
+                total_area += potential_area
+                potential_area = 0
+                i = j 
+                j = j + 1
+            else:
+                potential_area += height[i] - height[j]
+                j += 1
+
+        i, j = n - 1, n - 2
+        potential_area = 0
+        
+        while j >= 0:
+            if height[j] > height[i]:
+                total_area += potential_area
+                potential_area = 0
+                i = j 
+                j = j - 1
+            else:
+                potential_area += height[i] - height[j]
+                j -= 1
+
+        
+        return total_area
+    
+s = Solution()
+print(s.trap([2,0,2]))
