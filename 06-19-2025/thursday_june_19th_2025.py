@@ -1,7 +1,26 @@
-"""Auto-generated on Thursday, June 19, 2025."""
+class Solution:
+    def trap(self, height):
+        s = []
+        n = len(height)
+        ans = 0
+        for i in range(n):
+            while s and height[i] >= height[s[-1]]:
+                mid = s.pop()
+                if len(s) == 0: 
+                    continue 
+                ans += (min(height[i], height[s[-1]]) - height[mid]) * (i - s[-1] - 1)
+            s.append(i)
+        
+        return ans
 
-def main() -> None:
-    print("Hello from thursday_june_19th_2025.py")
+s = Solution()
+print(s.trap([9,2,4,1,6]))
 
-if __name__ == "__main__":
-    main()
+                
+
+            
+
+
+
+
+
