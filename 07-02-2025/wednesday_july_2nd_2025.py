@@ -1,7 +1,15 @@
 """Auto-generated on Wednesday, July 02, 2025."""
 
-def main() -> None:
-    print("Hello from wednesday_july_2nd_2025.py")
-
-if __name__ == "__main__":
-    main()
+from typing import *
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        left, right = 0, len(nums)
+        while left <= right:
+            m = (left + right) // 2
+            if nums[m] == target: return m
+            if target < nums[m]: 
+                right = m - 1
+            if target > nums[m]: 
+                left = m + 1
+            
+        return -1
