@@ -7,16 +7,17 @@ class Solution:
         if len(nums1) > len(nums2):
             nums1, nums2 = nums2, nums1
         left, right = 0, len(nums1) 
-        target_size = ((len(nums1) + len(nums2)) // 2) - 1
+        target_size = (len(nums1) + len(nums2) - 1) // 2 
         while left <= right:
             m = (left + right) // 2
-            right2 = target_size - m 
+            right2 = (target_size - m) + 1
             if right2 < len(nums2) and nums2[right2] < nums1[m - 1]:
                 right = m - 1
             elif m < len(nums1) and nums1[m] <= nums2[right2 - 1]:
                 left = m + 1
             else:
-                return 0.0
+                if len(nums1) + len(nums2) % 2 == 0:
+                    return nums1[right - 1] 
                 
         return 0.0
                         
