@@ -78,8 +78,8 @@ echo "💾  Committed with message: $commit_message"
 
 # ── 8. Open the file (optional) ───────────────────────────────────────────────
 # Check if 'code' command exists (VS Code) and open if it does
-if command -v code &> /dev/null; then
-    code "$filepath"
+if command -v nvim &> /dev/null; then
+    nvim "$filepath"
 else
     echo "ℹ️  'code' command not found. Skipping opening the file in VS Code."
 fi
