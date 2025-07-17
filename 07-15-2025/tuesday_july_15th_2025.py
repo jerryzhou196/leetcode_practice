@@ -11,7 +11,7 @@ class Solution:
         for i in range(1, k):
             if inc[-1][0] <= nums[i]:
                 inc.pop()
-                inc.append([nums[i], i])
+            inc.append([nums[i], i])
 
         ans.append(inc[-1][0])
 
@@ -27,6 +27,6 @@ class Solution:
         return ans
 
 s = Solution()
-print(s.maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3)) 
+print(s.maxSlidingWindow([9,10,9,-7,-4,-8,2,-6], 5)) 
 
 
