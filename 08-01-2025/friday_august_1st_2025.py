@@ -1,7 +1,34 @@
-"""Auto-generated on Friday, August 01, 2025."""
+from typing import *
 
-def main() -> None:
-    print("Hello from friday_august_1st_2025.py")
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        start = end = head
+        count = n + 1
+        while count and end:
+            end = end.next
+            count -= 1
+        
+        while end:
+            end = end.next
+            start = start.next
+        
+        start.next = start.next.next
+        return head
 
-if __name__ == "__main__":
-    main()
+
+        
+        
+
+        
+            
+
+        
+
+
+
+        
