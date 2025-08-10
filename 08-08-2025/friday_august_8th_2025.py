@@ -1,7 +1,9 @@
-"""Auto-generated on Friday, August 08, 2025."""
+from typing import *
 
-def main() -> None:
-    print("Hello from friday_august_8th_2025.py")
-
-if __name__ == "__main__":
-    main()
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        for num in nums:
+            if nums[abs(num)] < 0:
+                return abs(num)
+            else:
+                nums[abs(num)] = -nums[abs(num)]
