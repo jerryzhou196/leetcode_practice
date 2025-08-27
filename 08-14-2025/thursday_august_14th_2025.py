@@ -1,7 +1,37 @@
-"""Auto-generated on Thursday, August 14, 2025."""
+from typing import *
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        slow = fast = 0
+        while True:
+            slow = nums[slow]
+            fast = nums[fast]
+            fast = nums[fast]
+            if slow == fast: 
+                break
+        
+        start, prev = 0, -1
+        while True:
+            temp = slow
+            slow = nums[slow]
+            start = nums[start]
+            prev = temp
+            if slow == start: 
+                return prev
 
-def main() -> None:
-    print("Hello from thursday_august_14th_2025.py")
 
-if __name__ == "__main__":
-    main()
+
+
+            
+
+        
+
+
+
+
+
+
+
+
+
+
+        
