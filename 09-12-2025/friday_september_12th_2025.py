@@ -1,7 +1,22 @@
-"""Auto-generated on Friday, September 12, 2025."""
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
-def main() -> None:
-    print("Hello from friday_september_12th_2025.py")
+from typing import *
+class Solution:
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        new_list = []
+        ans = curr = ListNode(-1, None)
+        for new_node in lists:
+            for node in lists:
+                new_list.append(node)
+                lists[node] = lists[node].next
 
-if __name__ == "__main__":
-    main()
+            new_list = sorted(new_list)
+            for node in new_list:
+                curr.next = ListNode(node)
+                curr = curr.next
+        
+        return ans
