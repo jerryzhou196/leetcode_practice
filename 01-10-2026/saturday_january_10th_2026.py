@@ -1,7 +1,23 @@
-"""Auto-generated on Saturday, January 10, 2026."""
+class Solution:
+    def trap(self, height):
+        ans = 0
+        current = 0
+        st = []
+        while current < len(height):
+            while len(st) != 0 and height[current] > height[st[-1]]:
+                top = st[-1]
+                st.pop()
+                if len(st) == 0:
+                    break
+                distance = current - st[-1] - 1
+                bounded_height = (
+                    min(height[current], height[st[-1]]) - height[top]
+                )
+                ans += distance * bounded_height
+            st.append(current)
+            current += 1
+        return ans
 
-def main() -> None:
-    print("Hello from saturday_january_10th_2026.py")
+s = Solution()
+s.trap([1, 3, 1, 2, 1, 1, 5, 1])
 
-if __name__ == "__main__":
-    main()
