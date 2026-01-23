@@ -1,7 +1,20 @@
-"""Auto-generated on Thursday, January 22, 2026."""
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        def check(i, j):
+            left, right = i, j
+            while left < right:
+                print(left, right)
+                if s[left] != s[right]: return False
+                left += 1
+                right -= 1
+            return True
+        
+        check(0, len(s) - 1)
 
-def main() -> None:
-    print("Hello from thursday_january_22nd_2026.py")
-
-if __name__ == "__main__":
-    main()
+        for length in range(len(s), 0, -1):
+            for start in range(len(s) - length + 1):
+                if check(start, start + length - 1):
+                    return s[start:start+length]
+            
+                
+                
