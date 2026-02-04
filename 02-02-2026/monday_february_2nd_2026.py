@@ -1,7 +1,20 @@
-"""Auto-generated on Monday, February 02, 2026."""
+def binarySearch(target, nums):
+    left, right = 0, len(nums) - 1
+    while left <= right: 
+        m = (left + right) // 2
+        print(left, right, m)
+        if nums[m] < target: 
+            left = m + 1
+        else: 
+            right = m - 1
+    return left
+            
 
-def main() -> None:
-    print("Hello from monday_february_2nd_2026.py")
+nums = [1,2,4,5,6,7,10]
 
-if __name__ == "__main__":
-    main()
+for num in nums:
+    binarySearch(num, nums)
+    
+
+
+
