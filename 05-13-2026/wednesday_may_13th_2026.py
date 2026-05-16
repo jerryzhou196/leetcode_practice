@@ -1,7 +1,17 @@
-"""Auto-generated on Wednesday, May 13, 2026."""
+class Solution:
+    def findUnsortedSubarray(self, nums: List[int]) -> int:
+        desc_stack = []
+        start, end = 0,0
+        for i, num in enumerate(nums):
+            while num < desc_stack[-1][1]:
+                elem = desc_stack.pop()
+                
+                
 
-def main() -> None:
-    print("Hello from wednesday_may_13th_2026.py")
+            desc_stack.append(num)
+            
 
-if __name__ == "__main__":
-    main()
+
+        
+    
+        
