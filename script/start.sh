@@ -27,10 +27,22 @@ filepath="$daily_dir/$filename"
 # ── 4. Create the directory (safe if it already exists) ───────────────────────
 mkdir -p "$daily_dir"
 
-# ── 5. Refuse to overwrite an existing file ───────────────────────────────────
+# ── 5. If today's file already exists, open the most recently created .py ────
 if [[ -e $filepath ]]; then
-  echo "⚠️  $filepath already exists — aborting." >&2
-  exit 1
+  echo "⚠️  $filepath already exists — opening most recently created file." >&2
+  most_recent=$(find . -type f -name '*.py' -not -path './.*' -print0 \
+    | xargs -0 stat -f '%B %N' \
+    | sort -rn \
+    | head -n 1 \
+    | cut -d' ' -f2-)
+  if [[ -n $most_recent ]] && command -v nvim &> /dev/null; then
+    nvim "$most_recent"
+  elif [[ -n $most_recent ]]; then
+    echo "ℹ️  'nvim' command not found. Most recent file: $most_recent"
+  else
+    echo "ℹ️  No .py files found."
+  fi
+  exit 0
 fi
 
 # ── 6. Write a minimal Python stub ────────────────────────────────────────────
@@ -77,9 +89,8 @@ git commit -m "$commit_message"
 echo "💾  Committed with message: $commit_message"
 
 # ── 8. Open the file (optional) ───────────────────────────────────────────────
-# Check if 'code' command exists (VS Code) and open if it does
 if command -v nvim &> /dev/null; then
-    cursor "$filepath"
+    nvim "$filepath"
 else
-    echo "ℹ️  'code' command not found. Skipping opening the file in VS Code."
+    echo "ℹ️  'nvim' command not found. Skipping opening the file in nvim."
 fi
