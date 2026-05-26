@@ -1,35 +1,3 @@
-"""Auto-generated on Monday, May 25, 2026."""
-class Solution:
-    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
-        next_free = []
-        meeting_rooms = 0
-        intervals.sort(key=lambda x: x[1])
-        
-        for interval in intervals: 
-            print(interval, meeting_rooms, next_free)
-            if not next_free or next_free[0] > interval[0]: 
-                meeting_rooms += 1
-            else: 
-                if next_free: heappop(next_free)
-            heappush(next_free, interval[1])
-        
-        return meeting_rooms
-
-class Solution:
-    def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
-        intervals = sorted(intervals, key=lambda x: x[1])
-        if not intervals: return True
-        # print(intervals)
-        ans = [intervals[0]]
-        for interval in intervals[1:]: 
-            # print(interval)
-            if interval[0] < ans[-1][1]:
-                return False
-            ans.append(interval)
-
-        return True 
-
-
 import heapq
 
 class Solution:
