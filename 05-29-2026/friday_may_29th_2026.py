@@ -1,7 +1,20 @@
-"""Auto-generated on Friday, May 29, 2026."""
+class Solution:
+    def findItinerary(self, tickets: List[List[str]]) -> List[str]:
+        nodes = {}
+        ans = []
 
-def main() -> None:
-    print("Hello from friday_may_29th_2026.py")
+        def traverse(curr): 
+            while curr in nodes and nodes[curr]:
+                neighbour = heappop(nodes[curr])
+                traverse(neighbour)
+            ans.append(curr)
 
-if __name__ == "__main__":
-    main()
+        for node, ticket in tickets: 
+            if node not in nodes: 
+                nodes[node] = [ticket] 
+            else: 
+                heappush(nodes[node], ticket)
+        
+        traverse("JFK")
+
+        return ans[::-1]
