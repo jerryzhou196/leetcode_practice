@@ -1,7 +1,21 @@
-"""Auto-generated on Saturday, May 30, 2026."""
+class Solution:
+    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+        heap = [(0, points[0])]
+        seen = set()
+        cost = 0
 
-def main() -> None:
-    print("Hello from saturday_may_30th_2026.py")
+        while len(seen) < len(points): 
+            # print(heap, seen)
+            val, point = heappop(heap)
+            y, x = point
+            if (y, x) in seen: continue 
+            cost += val
+            seen.add((y,x))
 
-if __name__ == "__main__":
-    main()
+            for i, j in points:
+                if not (i == y and j == x): 
+                    heappush(heap, (abs(y - i) + abs(x - j), [i, j]))
+
+
+        return cost 
+           
