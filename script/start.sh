@@ -88,6 +88,29 @@ git commit -m "$commit_message"
 
 echo "💾  Committed with message: $commit_message"
 
+# ── 7b. Push to the remote if there are new (unpushed) changes ────────────────
+branch=$(git rev-parse --abbrev-ref HEAD)
+upstream=$(git rev-parse --abbrev-ref --symbolic-full-name '@{u}' 2>/dev/null || true)
+
+if [[ -z "$upstream" ]]; then
+  # No tracking branch yet — push and set it up.
+  echo "🔼  No upstream set — pushing and tracking origin/$branch…"
+  git push -u origin "$branch" \
+    && echo "✅  Pushed to origin/$branch" \
+    || echo "⚠️  Push failed — you can push manually later."
+else
+  # Only push when this branch is ahead of its upstream.
+  ahead=$(git rev-list --count '@{u}..HEAD' 2>/dev/null || echo 0)
+  if [[ "$ahead" -gt 0 ]]; then
+    echo "🔼  $ahead new commit(s) to push…"
+    git push \
+      && echo "✅  Pushed $ahead commit(s) to $upstream" \
+      || echo "⚠️  Push failed — you can push manually later."
+  else
+    echo "ℹ️  Nothing new to push."
+  fi
+fi
+
 # ── 8. Open the file (optional) ───────────────────────────────────────────────
 if command -v nvim &> /dev/null; then
     nvim "$filepath"
