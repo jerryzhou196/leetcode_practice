@@ -1,7 +1,14 @@
-"""Auto-generated on Friday, June 12, 2026."""
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        n = len(nums)
+        dp, smallest = [0 for _ in range(n)], [0 for _ in range(n)]
 
-def main() -> None:
-    print("Hello from friday_june_12th_2026.py")
+        dp[0], smallest[0] = nums[0], nums[0]
+        for i in range(1, n): 
+            dp[i] = max(dp[i - 1] * nums[i], smallest[i - 1] * nums[i], nums[i])
+            smallest[i] = min(smallest[i - 1] * nums[i], dp[i - 1] * nums[i], nums[i])
+        
+        return max(dp)
 
-if __name__ == "__main__":
-    main()
+        # dp[i] = dp[i - 1] * nums[i] if nums[i] > 0 else min[i - 1] * nums[i] if nums < 0
+       
