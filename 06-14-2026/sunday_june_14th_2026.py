@@ -1,7 +1,17 @@
-"""Auto-generated on Sunday, June 14, 2026."""
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        dp = [[False for _ in range(n)] for _ in range(m)]
+        dp[0][0] = 1
 
-def main() -> None:
-    print("Hello from sunday_june_14th_2026.py")
+        for i in range(m):
+            dp[i][0] = 1
+        
+        for j in range(n):
+            dp[0][j] = 1
 
-if __name__ == "__main__":
-    main()
+        for i in range(1, m):
+            for j in range(1, n):
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
+        
+        return dp[m - 1][n - 1]
+        
