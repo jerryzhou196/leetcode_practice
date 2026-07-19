@@ -3,7 +3,7 @@ class Solution:
         parent = {}
         # edges = defaultdict(list)
         for i, (y, x) in enumerate(edges, 1):
-            parent[i] = i 
+            parent[i] = i
             # edges[y] = x
 
         def find(a):
@@ -16,9 +16,8 @@ class Solution:
             root1 = find(b)
             parent[root] = root1
 
-        for a, b in edges:         
+        for a, b in edges:
             if find(a) == find(b):
                 return [a, b]
             else:
                 union(a, b)
-
